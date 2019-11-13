@@ -1,0 +1,40 @@
+<%--
+        Created by IntelliJ IDEA.
+        User: shenbo
+        Date: 2019/10/30
+        Time: 2:16 PM
+        To change this template use File | Settings | File Templates.
+        --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<html>
+<head>
+    <title>$Title$</title>
+    <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        $("#testJson").click(function (t) {
+        var url = this.href;
+        var args = {};
+        $.post(url,args,function (data) {
+        console.log("1");
+        console.log(data);
+        });
+
+        return false;
+        })
+        })
+    </script>
+</head>
+<body>
+    <a href="testJson" id="testJson">Test Json</a>
+
+    <form action="testHttpMessageConverter" method="post" enctype="multipart/form-data">
+        File : <input type="file" name="file">
+        Desc : <input type="text" name="desc">
+        <input type="submit" name="submit">
+    </form>
+
+    <fmt:message key="i18n.username">dasds</fmt:message>
+</body>
+</html>
